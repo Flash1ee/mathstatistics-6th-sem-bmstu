@@ -24,8 +24,8 @@ function main()
         set(gca, "xlim", [min(bins) - 1, max(bins) + 1]);
         bar(centers, heights, 1);
         
-        nodes = (m_min - 3):(S / 250):(m_max + 3);
-        %nodes = 0:(S / 250):(m_max + 5);
+        nodes = (m_min - 5):(S / 250):(m_max + 5);
+        %nodes = 0:(S /0):(m_max + 5);
         X_pdf = normpdf(nodes, mu, sqrt(S));
         plot(nodes, X_pdf, "r");
     end
@@ -43,8 +43,8 @@ function main()
             heights(i) = acc / n;
         end
 
-        nodes = (m_min):(S / 250):(m_max);
-        X_cdf = normcdf(nodes, mu, sqrt(S));
+        nodes = (m_min - 2):(S / 100):(m_max + 2);
+        X_cdf = normcdf(nodes, mu, sqrt(S)))
         plot(nodes, X_cdf, "r");
 
         for i = 2:m
@@ -52,7 +52,7 @@ function main()
         end
 
         set(gca, "xtick", bins);
-        set(gca, "ylim", [0, 1.1]);
+        set(gca, "ylim", [0, 1.5]);
         set(gca, "ytick", heights);
         stairs(bins, heights);
     end
@@ -65,7 +65,7 @@ function main()
           0.76,0.87,-1.52,0.63,-0.56,0.83,0.31,-0.18,0.99,-1.01,0.58,1.21,-1.51,0.65,0.35,...
           -0.37,-0.50,-0.73,0.63,0.33,1.56,-0.98,0.85,0.56,-1.07,1.47,1.44,1.91,0.24,1.34,...
           0.99,1.27,0.11,0.22,-0.25,0.35,-0.03,-0.56,-0.79,2.41,-0.45,-0.44,0.07,0.64,0.69,...
-          0.10,-0.28]
+          0.10,-0.28, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4 ,4 ,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]
     
    
     X = sort(X);
@@ -82,6 +82,7 @@ function main()
     % Вычисление размаха выборки
     
     r = m_max - m_min;
+    h = r / 8
     fprintf("2. Размах выборки: R = %f.\n", r);
     fprintf("----------------------------------------\n");
 
